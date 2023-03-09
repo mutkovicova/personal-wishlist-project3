@@ -10,7 +10,11 @@ The purpose of this project is to create a wishlist for a user to populate with 
 
 The wishlist items will each have certain input fields, ranging from basic integer fields like id to boolean fields which identify whether the item is considered luxury by the user. 
 
+## Design
 
+Utilising Materialize cards, design one which allows the user to see information about the wishlist item at a glance and switch between more info and editing/deleting.
+
+![card design](assets/readme-files/card-wireframe.png)
 
 ## Gitpod Reminders
 
