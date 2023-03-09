@@ -44,7 +44,7 @@ def delete_category(id):
     return redirect(url_for("categories"))
 
 
-@app.route("/add_item")
+@app.route("/add_item", methods=["GET", "POST"])
 def add_item():
     categories = list(Category.query.order_by(Category.name).all())
     if request.method == "POST":

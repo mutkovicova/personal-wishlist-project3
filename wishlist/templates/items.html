@@ -10,4 +10,28 @@
         </a>
     </div>
 </div>
+
+<div class="row">
+    {% for item in items %}
+    <div class="col s4">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{ item.item_name }}</span>
+                <p>{{ item.description }}</p>
+            </div>
+            <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab"><a class="active" href="#test1{{ item.id }}">Test 1</a></li>
+                    <li class="tab"><a href="#test2{{ item.id }}">Test 2</a></li>
+                </ul>
+            </div>
+            <div class="card-content grey lighten-4">
+                <div id="test1{{ item.id }}">Test 1</div>
+                <div id="test2{{ item.id }}">Test 2</div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
 {% endblock %}
