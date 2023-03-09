@@ -1,11 +1,13 @@
 from flask import render_template, request, redirect, url_for
 from wishlist import app, db
 from wishlist.models import Category, Item
+from datetime import date
 
 
 @app.route("/")
 def home():
-    return render_template("base.html")
+    items = list(Item.query.order_by(Item.date_created).all())
+    return render_template("items.html", items=items)
 
 
 @app.route("/categories")
@@ -40,3 +42,21 @@ def delete_category(id):
     db.session.delete(category)
     db.session.commit()
     return redirect(url_for("categories"))
+
+
+@app.route("/add_item")
+def add_item():
+    categories = list(Category.query.order_by(Category.name).all())
+    if request.method == "POST":
+        item = Item(
+            category_id=request.form.get("category_id"),
+            item_name=request.form.get("item_name"),
+            is_luxury=bool(True if request.form.get("is_luxury") else False),
+            link=request.form.get("link"),
+            description=request.form.get("description"),
+            date_created=date.today()
+            )
+        db.session.add(item)
+        db.session.commit()
+        return redirect(url_for("home"))
+    return render_template("add_item.html", categories=categories)
