@@ -8,7 +8,7 @@ The purpose of this project is to create a wishlist for a user to populate with 
 
 ![data model](/assets/readme-files/wishlist-data-model.png)
 
-The wishlist items will each have certain input fields, ranging from basic integer fields like id to boolean fields which identify whether the item is considered luxury by the user. 
+The wishlist items will each have certain input fields, ranging from basic integer fields like id to boolean fields which identify whether the item is considered luxury by the user.
 
 ## Design
 
@@ -46,15 +46,15 @@ In Gitpod you have superuser security privileges by default. Therefore you do no
 
 To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
+1. Log in to your Heroku account and go to Account Settings in the menu under your avatar.
+2. Scroll down to the API Key and click Reveal
 3. Copy the key
 4. In Gitpod, from the terminal, run `heroku_config`
 5. Paste in your API key when asked
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-THE THING: 
-set_pg 
+THE THING:
+set_pg
 
 IF psql not working
