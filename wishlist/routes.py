@@ -60,3 +60,25 @@ def add_item():
         db.session.commit()
         return redirect(url_for("home"))
     return render_template("add_item.html", categories=categories)
+
+
+@app.route("/edit_item/<int:id>", methods=["GET", "POST"])
+def edit_item(id):
+    item = Item.query.get_or_404(id)
+    categories = list(Category.query.order_by(Category.name).all())
+    if request.method == "POST":
+        item.item_name = request.form.get("item_name")
+        item.is_luxury = bool(True if request.form.get("is_luxury") else False)
+        item.link = request.form.get("link")
+        item.description = request.form.get("description")
+        db.session.commit()
+        return redirect(url_for("home"))
+    return render_template("edit_item.html", item=item, categories=categories)
+
+
+@app.route("/delete_item/<int:id>")
+def delete_item(id):
+    item = Item.query.get_or_404(id)
+    db.session.delete(item)
+    db.session.commit()
+    return redirect(url_for("home"))

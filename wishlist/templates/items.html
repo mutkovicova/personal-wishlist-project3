@@ -21,13 +21,25 @@
             </div>
             <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width">
-                    <li class="tab"><a class="active" href="#test1{{ item.id }}">Test 1</a></li>
-                    <li class="tab"><a href="#test2{{ item.id }}">Test 2</a></li>
+                    <li class="tab"><a class="active" href="#test1{{ item.id }}">More info</a></li>
+                    <li class="tab"><a href="#test2{{ item.id }}">Actions</a></li>
                 </ul>
             </div>
             <div class="card-content grey lighten-4">
-                <div id="test1{{ item.id }}">Test 1</div>
-                <div id="test2{{ item.id }}">Test 2</div>
+                <div class="button-content" id="test1{{ item.id }}">
+                    {% if item.is_luxury==True %}
+                    <p><strong>This is a luxury item</strong></p>
+                    {% endif %}
+                    <p><strong>Category:</strong> {{ item.category }}</p>
+                    <p><strong>Date created:</strong> {{ item.date_created }}</p>
+                    {% if item.link %}
+                    <p><a href="{{ item.link }}" target="_blank">Link</a></p>
+                    {% endif %}
+                </div>
+                <div class="button-content" id="test2{{ item.id }}">
+                    <a href="{{ url_for('edit_item', id=item.id) }}" class="btn green accent-4">Edit</a>
+                    <a href="{{ url_for('delete_item', id=item.id) }}" class="btn red">Delete</a>
+                </div>
             </div>
         </div>
     </div>

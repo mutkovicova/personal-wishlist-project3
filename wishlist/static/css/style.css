@@ -1,3 +1,7 @@
 .extra-left-margin {
     margin-left: 3rem;
 }
+
+.button-content {
+    min-height: 90px;
+}

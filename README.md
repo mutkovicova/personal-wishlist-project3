@@ -74,6 +74,10 @@ Python was used to create the database integration.
 
 Am I Responsive? was used to create the screenshot for the finished project.
 
+### Font Awesome
+
+
+
 ## Credit
 
 Massive credit given to Tim at Code Institute and the walkthrough for the Relational Databases module. This wishlist is an amended version of his task manager and some standard bits of code (such as those in the app.py file) are borrowed directly from his work.
