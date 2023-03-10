@@ -38,6 +38,8 @@ Utilising Materialize cards, design one which allows the user to see information
 
 ![card design](assets/readme-files/card-wireframe.png)
 
+Navbar - link on right as that feels natural to me
+
 ## Debugging
 
 ### Cards
@@ -76,6 +78,11 @@ Am I Responsive? was used to create the screenshot for the finished project.
 
 ### Font Awesome
 
+## Future development
+
+Order by date and time created:
+didn't have time to figure this out this time around
+
 
 
 ## Credit
@@ -83,6 +90,8 @@ Am I Responsive? was used to create the screenshot for the finished project.
 Massive credit given to Tim at Code Institute and the walkthrough for the Relational Databases module. This wishlist is an amended version of his task manager and some standard bits of code (such as those in the app.py file) are borrowed directly from his work.
 
 Secondly, a big thank you to my friend Ariela for once again sitting down with me and helping me through this project. I personally found the pivot from JavaScript to Python quite difficult, and she is actually a .NET developer so appreciated the learning opportunity. Together, we figured bugs out and learned a lot!
+
+
 
 ## Gitpod Reminders
 

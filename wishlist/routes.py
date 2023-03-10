@@ -6,7 +6,7 @@ from datetime import date
 
 @app.route("/")
 def home():
-    items = list(Item.query.order_by(Item.date_created).all())
+    items = list(Item.query.order_by(Item.item_name).all())
     return render_template("items.html", items=items)
 
 

@@ -33,7 +33,9 @@
                     <p><strong>Category:</strong> {{ item.category }}</p>
                     <p><strong>Date created:</strong> {{ item.date_created }}</p>
                     {% if item.link %}
-                    <p><a href="{{ item.link }}" target="_blank">Link</a></p>
+                    <div><a href="{{ item.link }}" target="_blank"> <strong>Link:</strong> <i
+                                class="fas fa-link"></i></a>
+                    </div>
                     {% endif %}
                 </div>
                 <div class="button-content" id="test2{{ item.id }}">
