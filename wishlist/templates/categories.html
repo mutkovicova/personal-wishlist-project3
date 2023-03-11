@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 
 {% block container %}
-
-<h3 class="grey-text text-darken-4 center-align">Categories</h3>
-
 <div class="row">
-    <div class="col s12 center-align">
+    <div class="col s8 push-s2">
+        <h3 class="grey-text text-darken-4 center-align">Categories</h3>
+    </div>
+
+    <div class="col s4 right-align add-button">
         <a href="{{ url_for('add_category') }}" class="btn-large grey darken-2">
             Add Category <i class="fas fa-plus-square right"></i>
         </a>
