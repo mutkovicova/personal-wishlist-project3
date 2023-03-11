@@ -1,3 +1,9 @@
+QUESTIONS FOR RACHEL:
+Testing - which Python validator? Do we need to do JS/CSS testing since it's minimal?
+Criteria doesn't mention user stories - are they needed?
+Wireframes and responsive screenshots?
+Data modeling - simple explanation okay?
+
 # Wishlist project
 
 The purpose of this project is to create a wishlist for a user to populate with products, or experiences, they would like to purchase.
