@@ -31,7 +31,7 @@
                     {% if item.is_luxury==True %}
                     <p><strong>This is a luxury item</strong></p>
                     {% endif %}
-                    <p><strong>Category:</strong> {{ item.category }}</p>
+                    <p><strong>Category:</strong> {{ category.name }}</p>
                     <p><strong>Date created:</strong> {{ item.date_created }}</p>
                     {% if item.link %}
                     <div><a href="{{ item.link }}" target="_blank"> <strong>Link:</strong> <i
