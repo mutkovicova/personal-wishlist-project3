@@ -1,28 +1,63 @@
-QUESTIONS FOR RACHEL:
-Testing - which Python validator? Do we need to do JS/CSS testing since it's minimal?
-Criteria doesn't mention user stories - are they needed?
-    include something of this sort but not as involved as the original user stories. PURPOSE and VALUE rather than user stories
-Wireframes and responsive screenshots?
-Data modeling - simple explanation okay? - yes!
-
 # Wishlist project
 
-The purpose of this project is to create a wishlist for a user to populate with products, or experiences, they would like to purchase.
+The purpose of this project is to create a wishlist for a user to populate with products, or experiences, they would like to purchase in the future.
 
-Am I responsive screenshot here.
+![Am I Responsive screenshot of website](assets/readme-files/amiresponsive-screenshot.png)
 
 ## Table of Contents
 
-1. [User purpose and value](#user-purpose-and-value)
+1. [User features, purpose and value](#user-features-purpose-and-value)
 2. [Data modeling](#data-modeling)
 3. [Design](#design)
-4. [Debugging](#debugging)
-5. [Technologies used](#technologies-used)
-6. [Credit](#credit)
+4. [Testing](#testing)
+    1. [Lighthouse](#lighthouse)
+    2. [Python validator](#python-validator)
+    3. [W3 HTML validator](#w3-html-validator)
+5. [Debugging](#debugging)
+    1. [Cards](#cards)
+    2. [Card tabs](#card-tabs)
+    3. [Icons](#icons)
+6. [Technologies used](#technologies-used)
+    1. [HTML5](#html5)
+    2. [CSS3](#css3)
+    3. [Materialize 1.0.0](#materialize-100)
+    4. [Flask](#flask)
+    5. [Python](#python)
+    6. [Am I Responsive?](#am-i-responsive)
+    7. [Font Awesome 5.15.4](#font-awesome-5154)
+7. [Future development](#future-development)
+    1. [Order by date and time](#order-by-date-and-time-created)
+    2. [Sort by](#sort-by)
+    3. [Validation of action](#validation-of-action)
+    4. [Login](#login)
+    5. [Display all items within category](#display-all-items-within-category)
+8. [Credit](#credit)
 
-## User purpose and value
+## User features, purpose and value
 
+The value in this tool is that it can track wishlist items from as many categories as a user wishes! Rather than being a wishlist specifically for travel, or shopping, or anything of the kind, this interface allows a user to populate their list with sources from across the web.
 
+The user is first presented with a full list of their items, sorted alphabetically by name. This means they have a clear overview of all their items, and can quicky add them when needed.
+
+![wishlist items page](assets/readme-files/wishlist-items-page.png)
+
+When adding items, a user can select from categories they have available, name their item, determine if they consider this a luxury item (this is left up to the interpretation of the user), a link to the item anywhere on the web and a quick description - in case they need a quick reminder of why they want this item.
+
+![adding items form](assets/readme-files/add-item-interface.png)
+
+Then, these items get displayed as simple card tabs. To enhance the interface, these cards have the name and description of the item displayed prominently, with further data such as if it is a luxury item, category, date created and a link to the item stored on a tab. This means the user doesn't have their view cluttered by an excess of data at first glance.
+
+The tabs will also hide optional data, such as link, if this has not been filled in. A note denoting that this is a luxury item only appears if this has been selected.
+
+![card layout](assets/readme-files/cards-optional-text.png)
+
+To prevent accidental deletion of items (as this does not yet validate that decision to delete), action buttons are stored on a secondary tab. This means a user has to perform an extra action to delete or edit their item, rather than have it in plain view. Particularly in mobile view scenarios, this prevents some mishaps from occuring.
+
+![card tabs more info vs actions](assets/readme-files/card-tabs-demonstrated.png)
+
+Finally, the category page has a simple overview of all the categories the user has created. This allows for quick adding of said categories.
+
+![categories page](assets/readme-files/categories-page.png)
 
 ## Data modeling
 
@@ -30,7 +65,7 @@ Am I responsive screenshot here.
 
 The wishlist items will each have certain input fields, ranging from basic integer fields like id to boolean fields which identify whether the item is considered luxury by the user.
 
-These data fields allow a user to have an overview of each wishlist item, and relate back to the categories when required.
+These data fields allow a user to have an overview of each wishlist item, and relate back to the category name when required.
 
 ## Design
 
@@ -40,11 +75,14 @@ I did however decide to deviate slightly from the original taskmanager material 
 
 I also decided to make the button to add items go to the right, as that is naturally where I would see action.
 
-I utilised Materialize cards, using in particular the simple card layout as well as adding the tabs to hide action items (such as edit and delete) so that these items couldn't be accidentally edited or deleted. I wanted those actions to be further away from a users touch. Mock up from Materialize below:
+I utilised Materialize cards, using in particular the simple card layout as well as adding the tabs to hide action items (such as edit and delete) so that these items couldn't be accidentally edited or deleted. I wanted those actions to be further away from a users touch. Mock up using screenshots from Materialize below:
 
 ![card design](assets/readme-files/card-wireframe.png)
 
-Finally, the colour choices were designed to be simple.
+Finally, the colour choices were designed to be simple and utilised [Materialize's own library of colours](https://materializecss.com/color.html).
+Navbar and Item cards - amber accent-4 #ffab00
+Text - grey #9e9e9e
+Categories cards - teal darken-1 #00897b
 
 ## Testing
 
@@ -56,14 +94,17 @@ Lighthouse testing came back with green across the board so I feel satisfied wit
 
 ### Python validator
 
-[CI Python validator](https://pep8ci.herokuapp.com/) 
+[CI Python validator](https://pep8ci.herokuapp.com/)
 routes.py - no errors
-models.py has errors as below however I ignored these.
+models.py has errors as below however I ignored these as I felt they affected the legibility of the code when on multiple lines.
 8: E501 line too long (89 > 79 characters)
 19: E501 line too long (105 > 79 characters)
 
-OLD ONE suggested changes to spacing around a function and equal signs in parameters. The GitPod editor does not likes this, but I have implemented PEP8 recommendations.
-The only other thing that I have ignored is that a line shouldn't be too long, as I did not want to have a singular function over 2 lines, as it makes it personally less legible to me while working with it.
+### W3 HTML validator
+
+[W3 HTML validator](https://validator.w3.org/nu/#textarea)
+
+The validator found errors across all sites as it did not like the use of {} within href's, however this was necessary for the interconnectedness of the app.
 
 ## Debugging
 
@@ -101,7 +142,7 @@ Flask was used to kickstart the Python logic in this app and provide a starting 
 
 Python was used to create the database integration.
 
-### Am I Responsive?
+### [Am I Responsive?](https://ui.dev/amiresponsive?url=https://project-3-wishlist.herokuapp.com/)
 
 Am I Responsive? was used to create the screenshot for the finished project.
 
@@ -111,58 +152,30 @@ Font Awesome was used to add a little bit of interest to the form, as well as th
 
 ## Future development
 
-Order by date and time created:
-didn't have time to figure this out this time around
-Sort by dropdown?:
-big idea is to have a sorting function
+There is still a lot of work that could be done, with better knowledge, to make this wishlist more intuitive to use.
 
+### Order by date and time created
 
+I attempted to originally order the wishlist items by date created, rather than name, so that the newest items would be at the top. However, when doing this, I realised I'd have to capture and pull both the date and the time of each item added, otherwise they would mishmash in no particular order if all added on the same day. While this is not a difficult thing to do, I decided it wasn't one to spend time on when considering the deadline for this project.
+
+### Sort by
+
+In an ideal world, I think every person now expects to be able to sort a big page full of items by its various components. When I have the knowledge and time, I would love to add a "sort by" dropdown which would allow the user to sort by name, luxury or date.
+
+### Validation of action
+
+Ideally, when deleting an item, a user should be prompted with another intervention to make sure they don't delete accidentally. While I mitigated this by hiding said action, I would've preferred to have had another pop up to verify it, just to be safe.
+
+### Login
+
+Related to point 3, I would love the option for users to have their own login and therefore have their own wishlists to populate. 
+
+### Display all items within category
+
+Going back to expected behaviour, I suspect many of us would expect to be able to click on the category name on either the item card OR on the category card on its own page, and be directed to a list of all items within that category. I'd like to implement that function sometime.
 
 ## Credit
 
 Massive credit given to Tim at Code Institute and the walkthrough for the Relational Databases module. This wishlist is an amended version of his task manager and some standard bits of code (such as those in the app.py file) are borrowed directly from his work.
 
 Secondly, a big thank you to my friend Ariela for once again sitting down with me and helping me through this project. I personally found the pivot from JavaScript to Python quite difficult, and she is actually a .NET developer so appreciated the learning opportunity. Together, we figured bugs out and learned a lot!
-
-
-
-## Gitpod Reminders
-
-### HTMl, CSS, JS
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-### Python
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-### Heroku
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to Account Settings in the menu under your avatar.
-2. Scroll down to the API Key and click Reveal
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-### Troubleshoot
-
-THE THING:
-set_pg
-
-IF psql not working
