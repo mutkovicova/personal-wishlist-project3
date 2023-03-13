@@ -2,10 +2,10 @@
 
 {% block container %}
 <div class="row">
-    <div class="col s8 push-s2">
+    <div class="col l8 push-s2">
         <h3 class="grey-text text-darken-4 center-align">Wishlist Items</h3>
     </div>
-    <div class="col s4 m2 right-align add-button">
+    <div class="col l4 m2 right-align add-button">
         <a href="{{ url_for('add_item') }}" class="btn-large grey darken-2">
             Add Item <i class="fas fa-plus-square right"></i>
         </a>
@@ -14,7 +14,7 @@
 
 <div class="row">
     {% for item in items %}
-    <div class="col s4 m6">
+    <div class="col l4 m6">
         <div class="card amber accent-4">
             <div class="card-content">
                 <span class="card-title">{{ item.item_name }}</span>
