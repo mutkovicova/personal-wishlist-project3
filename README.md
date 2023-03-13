@@ -1,8 +1,9 @@
 QUESTIONS FOR RACHEL:
 Testing - which Python validator? Do we need to do JS/CSS testing since it's minimal?
 Criteria doesn't mention user stories - are they needed?
+    include something of this sort but not as involved as the original user stories. PURPOSE and VALUE rather than user stories
 Wireframes and responsive screenshots?
-Data modeling - simple explanation okay?
+Data modeling - simple explanation okay? - yes!
 
 # Wishlist project
 
@@ -12,11 +13,16 @@ Am I responsive screenshot here.
 
 ## Table of Contents
 
-1. [Data modeling](#data-modeling)
-2. [Design](#design)
-3. [Debugging](#debugging)
-4. [Technologies used](#technologies-used)
-5. [Credit](#credit)
+1. [User purpose and value](#user-purpose-and-value)
+2. [Data modeling](#data-modeling)
+3. [Design](#design)
+4. [Debugging](#debugging)
+5. [Technologies used](#technologies-used)
+6. [Credit](#credit)
+
+## User purpose and value
+
+
 
 ## Data modeling
 
@@ -50,7 +56,13 @@ Lighthouse testing came back with green across the board so I feel satisfied wit
 
 ### Python validator
 
-[PEP8 validator](https://www.pythonchecker.com/) suggested changes to spacing around a function and equal signs in parameters. The GitPod editor does not likes this, but I have implemented PEP8 recommendations.
+[CI Python validator](https://pep8ci.herokuapp.com/) 
+routes.py - no errors
+models.py has errors as below however I ignored these.
+8: E501 line too long (89 > 79 characters)
+19: E501 line too long (105 > 79 characters)
+
+OLD ONE suggested changes to spacing around a function and equal signs in parameters. The GitPod editor does not likes this, but I have implemented PEP8 recommendations.
 The only other thing that I have ignored is that a line shouldn't be too long, as I did not want to have a singular function over 2 lines, as it makes it personally less legible to me while working with it.
 
 ## Debugging
@@ -101,6 +113,8 @@ Font Awesome was used to add a little bit of interest to the form, as well as th
 
 Order by date and time created:
 didn't have time to figure this out this time around
+Sort by dropdown?:
+big idea is to have a sorting function
 
 
 
