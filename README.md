@@ -31,7 +31,8 @@ The purpose of this project is to create a wishlist for a user to populate with 
     3. [Validation of action](#validation-of-action)
     4. [Login](#login)
     5. [Display all items within category](#display-all-items-within-category)
-8. [Credit](#credit)
+8. [Deployment](#deployment)
+9. [Credit](#credit)
 
 ## User features, purpose and value
 
@@ -174,6 +175,48 @@ Related to point 3, I would love the option for users to have their own login an
 
 Going back to expected behaviour, I suspect many of us would expect to be able to click on the category name on either the item card OR on the category card on its own page, and be directed to a list of all items within that category. I'd like to implement that function sometime.
 
+## Deployment
+
+### [ElephantSQL](https://www.elephantsql.com/)
+
+1. Create account with ElephantSQL
+2. Link GitHub repositories with ElephantSQL
+3. Create new instance and name it similarly
+4. Choose region close to you (I chose Ireland EU West)
+5. All done!
+
+### [Heroku](https://www.heroku.com)
+
+1. Generate requirements.txt file using:  
+pip freeze --local > requirements.txt
+ 
+2. Create a new file with the name Procfile and the content of  
+web: python run.py
+  
+3. Change Development to FALSE and Debug to FALSE within env.py
+  
+4. Navigate to Heroku and create account
+5. Click on New and go to Create New App in top right
+6. Choose a unique name and choose the Europe region
+7. Go to Reveal Config Vars
+    1. Navigate back to ElephantSQL and copy the Database URL in your created instance
+    2. In Config Vars, add a new one with DATABASE_URL as key and the URL from ElephantSQL as value
+    3. Copy over all other env.py values except for DEVELOPMENT and DB_URL
+8. Navigate to the Deploy tab
+    1. Connect via GitHub
+    2. Navigate down to Manual Deploy and click on Deploy Branch
+9. Now let's create the database
+    1. Navigate to the top right and click on the three dots
+    2. Click on Run Console
+    3. Enter python3 into console and click Run
+    4. In the opened terminal, enter:  
+from taskmanager import db  
+db.create_all()  
+    5. Then enter exit() to exit terminal
+10. Navigate back to the app interface and click on Open App in the top right
+
+All done!
+    
 ## Credit
 
 Massive credit given to Tim at Code Institute and the walkthrough for the Relational Databases module. This wishlist is an amended version of his task manager and some standard bits of code (such as those in the app.py file) are borrowed directly from his work.
